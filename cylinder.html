@@ -34,9 +34,9 @@
                 oViewer.addEventListener(Autodesk.Viewing.GEOMETRY_LOADED_EVENT, function (event) {
 //                    oViewer.removeEventListener (Autodesk.Viewing.GEOMETRY_LOADED_EVENT, arguments.callee) ;
                     oViewer.fitToView(false);
-                    setTimeout(function () {
-                        oViewer.autocam.setHomeViewFrom(oViewer.navigation.getCamera());
-                    }, 1000);
+//                    setTimeout(function () {
+//                        oViewer.autocam.setHomeViewFrom(oViewer.navigation.getCamera());
+//                    }, 1000);
                 });
                 oViewer.loadModel(options.docid);
             });
