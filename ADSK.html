@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script id="sap-ui-bootstrap"
+            src="https://sapui5.netweaver.ondemand.com/resources/sap-ui-core.js"
+            data-sap-ui-theme="sap_belize"
+            data-sap-ui-libs="sap.m,sap.ui.commons,sap.ui.table,sap.ui.core"
+            data-sap-ui-language="en">
+    </script>
+    <script>
+        $(function () {
+            var settings = {
+                "async": true,
+                "crossDomain": true,
+                "url": "https://developer.api.autodesk.com/authentication/v1/authenticate",
+                "method": "POST",
+                "dataType": "jsonp",
+                "headers": {
+                    "content-type": "application/x-www-form-urlencoded",
+                    "access-control-allow-origin": "*",
+                    "cache-control": "no-cache",
+                    "postman-token": "7cf9adfe-6cad-cf4d-47dc-f11ab31cd288"
+                },
+                "data": {
+                    "client_id": "9n9kvDeyup3ZPusXCzxTHA9b7ZAVZuI5",
+                    "client_secret": "Uc618dd9a77a84d3",
+                    "grant_type": "client_credentials",
+                    "scope": "data:read"
+                }
+            }
+            cc(settings);
+            $.ajax(settings).done(function (response) {
+                cc('ajax');
+                console.log(response);
+            });
+        });
+
+        function cc(obj) {
+            console.log(obj);
+        }
+    </script>
+</head>
+<body>
+
+</body>
+</html>
